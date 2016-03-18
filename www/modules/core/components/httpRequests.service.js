@@ -15,14 +15,11 @@
 	        };
 	        service.baseUrl = '';
 			var apiObj = {
-	        	/*  Example:
-	        	
-	        		name: {
-						methodType: 'POST' / 'GET' / 'PUT' / 'DELETE',
-						url: '...',
-						nextUrlPart: '...'		<= This refers to eg: http://www.google.com/:id/nextUrlPart
-	        		}
-	        	 */
+				get_sample_data: {
+					methodType: 'GET',
+					url: 'https://www.hackertrail.com/media/challenges/cxaassets/sampledata.json'
+					// nextUrlPart: '...'
+				}
 	        }
 
 	        /* ======================================== Services =============================================== */
