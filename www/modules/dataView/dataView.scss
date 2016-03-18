@@ -1,5 +1,14 @@
 .dataViewContainer {
 	padding: 1em;
+	.topContainer {
+		input {
+			font-size: 1.5em;
+	    	padding: 0 0.2em;
+		}
+		button {
+			margin-left: 1em;
+		}
+	}
 	.tableContainer {
 		margin: 1em 0 0 0;
 		table {
