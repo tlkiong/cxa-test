@@ -26,7 +26,9 @@
 		    border-collapse: collapse;
 		}
 		.dataRow {
-			padding: 0.4em 0.5em;
+			td {
+				padding: 0.4em 0.5em;
+			}
 			&:hover {
 				background-color: #FFFF00;
 			}
