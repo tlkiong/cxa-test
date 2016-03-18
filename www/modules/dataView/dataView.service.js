@@ -1,11 +1,11 @@
 (function() {
 	'use strict';
 	
-	angular.module('Sample')
-		.service('sampleService', sampleService);
+	angular.module('DataView')
+		.service('dataViewService', dataViewService);
 
-		sampleService.$inject = [];
-		function sampleService() {
+		dataViewService.$inject = [];
+		function dataViewService() {
 			var service = this;
 
 			/* ======================================== Var ==================================================== */

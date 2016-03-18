@@ -3,10 +3,12 @@
 
     angular.module('app', [
             'Core',
-            'Directives'
+            'Directives',
+            'Root',
+            'DataView'
         ])
         .config(function($stateProvider, $urlRouterProvider, $compileProvider) {
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/data_view');
             $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
         }).run(function(/* $state */$rootScope) {
         	$rootScope.$on('$stateChangeStart', function(evnt, toState, toParams, fromState, fromParams) {

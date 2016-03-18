@@ -1,12 +1,12 @@
 (function() {
     'use strict';
     
-    angular.module('Sample')
-        .controller('sampleController', sampleController);
+    angular.module('DataView')
+        .controller('dataViewController', dataViewController);
 
-    sampleController.$inject = ['commonService'];
+    dataViewController.$inject = ['commonService'];
 
-    function sampleController(commonService) {
+    function dataViewController(commonService) {
         var vm = this;
 
         /* ======================================== Var ==================================================== */
@@ -14,7 +14,6 @@
 
         /* ======================================== Services =============================================== */
         var cmnSvc = commonService;
-        var sessionSvc = sessionService;
 
         /* ======================================== Public Methods ========================================= */
 

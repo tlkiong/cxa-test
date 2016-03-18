@@ -1,37 +1,21 @@
 (function () {
     'use strict';
     
-	angular.module("Sample", [])
+	angular.module('DataView', [])
 		.config(function ($stateProvider) {
 			$stateProvider
-				.state('sample', {
-                    url: '/',
+				.state('data_view', {
+                    url: '/data_view',
+                    params: {
+                        data: null
+                    },
                     views: {
                         'main': {
-                            templateUrl: './modules/sample/sample.html',
-                            controller: 'sampleController',
+                            templateUrl: './modules/dataView/dataView.html',
+                            controller: 'dataViewController',
                             controllerAs: 'vm'
                         }
                     }
                 });
-                /** The below shows how to load a view within 'root.html'
-                 *  This is because this will be a child state of root.html
-                 *  params is the way you can pass data around the state.
-                 *      - To pass the data: $state.go('root.sample', {data: 'lala'});      <= This is handled in commonService.goToPage(...)
-                 *      - To fetch the data passed to sampleController: $stateParams       <= This is handled in commonService.getStateParam()
-                 */
-                // .state('root.sample', {
-                //     url: 'sample',       <= the url here will be: /root/sample
-                //     params: {
-                //         data: null,
-                //     },
-                //     views: {
-                //         'subMain': {     <= This means load this bottom view into the subMain named ui-view
-                //             templateUrl: './modules/sample/sample.html',
-                //             controller: 'sampleController',
-                //             controllerAs: 'vm'
-                //         }
-                //     }
-                // });
 		})
 })();
