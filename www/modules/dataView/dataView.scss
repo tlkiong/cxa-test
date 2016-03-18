@@ -1,0 +1,26 @@
+.dataViewContainer {
+	padding: 1em;
+	.tableContainer {
+		margin: 1em 0 0 0;
+		table {
+			width: 100%;
+			border: 1px solid #000000;
+		    border-collapse: collapse;
+		}
+		th {
+			background-color: #CCCCCC;
+			border: 1px solid #000000;
+		    border-collapse: collapse;
+		}
+		td {
+		    border: 1px solid #000000;
+		    border-collapse: collapse;
+		}
+		.isActive {
+			background-color: #B2FFB2;
+		}
+		.isNotActive {
+			background-color: #FFB2B2;
+		}
+	}
+}

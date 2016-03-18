@@ -1,1 +1,53 @@
-<div>Just for a data view</div>
+<section class="flexDown dataViewContainer">
+    <input type="text" placeholder="Search" ng-model="vm.misc.searchTxt"></input>
+    <section class="tableContainer">
+        <table style="width:100%">
+            <tr>
+                <th>
+                	<span>First Name</span>
+                	<i class="ion-arrow-up-b" ng-click="vm.sortBy('eyeColor', true)"></i>
+                	<i class="ion-arrow-down-b"></i>
+                </th>
+                <th>
+                	<span>Last Name</span>
+                	<i class="ion-arrow-up-b" ng-click="vm.sortBy('eyeColor', true)"></i>
+                	<i class="ion-arrow-down-b"></i>
+                </th>
+                <th>
+                	<span>Company Name</span>
+                	<i class="ion-arrow-up-b" ng-click="vm.sortBy('eyeColor', true)"></i>
+                	<i class="ion-arrow-down-b"></i>
+                </th>
+                <th>
+                	<span>Email Address</span>
+                	<i class="ion-arrow-up-b" ng-click="vm.sortBy('eyeColor', true)"></i>
+                	<i class="ion-arrow-down-b"></i>
+                </th>
+                <th>
+                	<span>Eye Colour</span>
+                	<i class="ion-arrow-up-b" ng-click="vm.sortBy('eyeColor', true)"></i>
+                	<i class="ion-arrow-down-b"></i>
+                </th>
+                <th>
+                	<span>Is Active</span>
+                	<i class="ion-arrow-up-b" ng-click="vm.sortBy('eyeColor', true)"></i>
+                	<i class="ion-arrow-down-b"></i>
+                </th>
+                <th>
+                	<span>Primary Phone Number</span>
+                	<i class="ion-arrow-up-b" ng-click="vm.sortBy('eyeColor', true)"></i>
+                	<i class="ion-arrow-down-b"></i>
+                </th>
+            </tr>
+            <tr ng-repeat="item in vm.data" ng-class="{'isNotActive': !item.isActive, 'isActive': item.isActive}">
+                <td>{{item.name.first}}</td>
+                <td>{{item.name.last}}</td>
+                <td>{{item.company}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.eyeColor}}</td>
+                <td>{{item.isActive}}</td>
+                <td>{{item.mainphone}}</td>
+            </tr>
+        </table>
+    </section>
+</section>
