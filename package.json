@@ -1,0 +1,43 @@
+{
+  "name": "CXA_Test",
+  "version": "1.0.0",
+  "description": "A challenge for CXA web developer job in HackerTrail (https://www.hackertrail.com/cxa?sc=listatus)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node_modules/.bin/bower install",
+    "start": "http-server ./www -a localhost -p 8080 -c-1 -o",
+    "update": "npm install && gulp update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlkiong/cxa_test.git"
+  },
+  "keywords": [
+    "CXA",
+    "Test"
+  ],
+  "author": "Kiong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlkiong/cxa_test/issues"
+  },
+  "homepage": "https://github.com/tlkiong/cxa_test#readme",
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "gulp": "^3.9.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-bower": "0.0.10",
+    "gulp-connect": "^2.2.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-ngdocs": "^0.2.13",
+    "gulp-open": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-watch": "^4.3.5",
+    "http-server": "^0.8.5",
+    "main-bower-files": "^2.9.0",
+    "merge-stream": "^1.0.0",
+    "run-sequence": "^1.1.4"
+  }
+}

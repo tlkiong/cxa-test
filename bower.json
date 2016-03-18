@@ -1,0 +1,32 @@
+{
+  "name": "CXA_Test",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tlkiong/cxa_test",
+  "authors": [
+    "Kiong <kiong90@gmail.com>"
+  ],
+  "description": "A challenge for CXA web developer job in HackerTrail (https://www.hackertrail.com/cxa?sc=listatus)",
+  "main": "www/index.html",
+  "moduleType": [],
+  "keywords": [
+    "CXA",
+    "Test"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "angular-sanitize": "~1.4.7",
+    "angular-touch": "~1.4.7"
+  }
+}
