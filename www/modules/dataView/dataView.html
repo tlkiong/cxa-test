@@ -1,7 +1,7 @@
 <section class="flexDown dataViewContainer">
     <input type="text" placeholder="Search" ng-model="vm.misc.searchTxt"></input>
     <section class="tableContainer">
-        <table style="width:100%">
+        <table>
             <tr>
                 <th>
                 	<span class="clickable">First Name</span>
@@ -39,7 +39,7 @@
                 	<i class="ion-arrow-down-b clickable"></i>
                 </th>
             </tr>
-            <tr ng-repeat="item in vm.data" ng-class="{'isNotActive': !item.isActive, 'isActive': item.isActive}">
+            <tr ng-repeat="item in vm.data | filter:vm.misc.searchTxt" ng-class="{'isNotActive': !item.isActive, 'isActive': item.isActive}">
                 <td>{{item.name.first}}</td>
                 <td>{{item.name.last}}</td>
                 <td>{{item.company}}</td>
