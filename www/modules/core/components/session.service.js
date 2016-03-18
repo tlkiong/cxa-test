@@ -5,9 +5,9 @@
     angular.module('Core')
         .service('sessionService', sessionService);
 
-    sessionService.$inject = ['commonService'];
+    sessionService.$inject = [];
 
-    function sessionService(commonService) {
+    function sessionService() {
         var service = this;
         service.isUserLoggedIn = isUserLoggedIn;
 
