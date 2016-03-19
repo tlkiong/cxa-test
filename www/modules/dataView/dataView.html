@@ -1,45 +1,48 @@
 <section class="flexDown dataViewContainer">
     <section class="topContainer flowAcross">
-    	<input type="text" placeholder="Search" ng-model="vm.misc.searchTxt" class="flexExpand"></input>
-    	<button ng-click="vm.sortBy()">Reset Sorting</button>
+        <md-input-container class="flexExpand inputContainer">
+            <label>Search Records</label>
+            <input type="text" ng-model="vm.misc.searchTxt" class="flexExpand"></input>
+        </md-input-container>
+        <md-button class="md-raised md-primary resetSortBtn" ng-click="vm.sortBy()">Reset Sorting</md-button>
     </section>
     <section class="tableContainer">
         <table>
             <tr>
                 <th>
-                	<span class="clickable">First Name</span>
-                	<i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('firstName', false)"></i>
-                	<i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('firstName', true)"></i>
+                    <span class="clickable">First Name</span>
+                    <i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('firstName', false)"></i>
+                    <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('firstName', true)"></i>
                 </th>
                 <th>
-                	<span class="clickable">Last Name</span>
-                	<i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('lastName', false)"></i>
-                	<i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('lastName', true)"></i>
+                    <span class="clickable">Last Name</span>
+                    <i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('lastName', false)"></i>
+                    <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('lastName', true)"></i>
                 </th>
                 <th>
-                	<span class="clickable">Company Name</span>
-                	<i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('companyName', false)"></i>
-                	<i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('companyName', true)"></i>
+                    <span class="clickable">Company Name</span>
+                    <i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('companyName', false)"></i>
+                    <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('companyName', true)"></i>
                 </th>
                 <th>
-                	<span class="clickable">Email Address</span>
-                	<i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('emailAddress', false)"></i>
-                	<i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('emailAddress', true)"></i>
+                    <span class="clickable">Email Address</span>
+                    <i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('emailAddress', false)"></i>
+                    <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('emailAddress', true)"></i>
                 </th>
                 <th>
-                	<span class="clickable">Eye Colour</span>
-                	<i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('eyeColor', false)"></i>
-                	<i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('eyeColor', true)"></i>
+                    <span class="clickable">Eye Colour</span>
+                    <i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('eyeColor', false)"></i>
+                    <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('eyeColor', true)"></i>
                 </th>
                 <th>
-                	<span class="clickable">Is Active</span>
-                	<i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('isActive', false)"></i>
-                	<i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('isActive', true)"></i>
+                    <span class="clickable">Is Active</span>
+                    <i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('isActive', false)"></i>
+                    <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('isActive', true)"></i>
                 </th>
                 <th>
-                	<span class="clickable">Primary Phone Number</span>
-                	<i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('phoneNumber', false)"></i>
-                	<i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('phoneNumber', true)"></i>
+                    <span class="clickable">Primary Phone Number</span>
+                    <i class="ion-arrow-up-b clickable" ng-click="vm.sortBy('phoneNumber', false)"></i>
+                    <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('phoneNumber', true)"></i>
                 </th>
             </tr>
             <tr ng-repeat="item in vm.data | filter:vm.misc.searchTxt | orderBy:vm.misc.orderVal:vm.misc.isReversed" class="clickable dataRow" ng-class="{'isNotActive': !item.isActive, 'isActive': item.isActive}">

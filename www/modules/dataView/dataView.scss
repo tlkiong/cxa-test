@@ -1,12 +1,23 @@
 .dataViewContainer {
 	padding: 1em;
 	.topContainer {
-		input {
-			font-size: 1.5em;
-	    	padding: 0 0.2em;
+		padding: 1em;
+		.inputContainer {
+	    	margin: 0 1.5em 0 0;
+	    	input {
+				font-size: 1.5em;
+		    	padding: 0 0.2em;
+			}
+			input:not(:focus) {
+				border-color: #000000;
+			}
 		}
-		button {
-			margin-left: 1em;
+		.resetSortBtn {
+			margin: auto;
+			height: 100%;
+		}
+		.md-errors-spacer {
+			min-height: 0;
 		}
 	}
 	.tableContainer {
