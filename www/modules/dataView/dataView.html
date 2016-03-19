@@ -45,7 +45,7 @@
                     <i class="ion-arrow-down-b clickable" ng-click="vm.sortBy('phoneNumber', true)"></i>
                 </th>
             </tr>
-            <tr ng-repeat="item in vm.data | filter:vm.misc.searchTxt | orderBy:vm.misc.orderVal:vm.misc.isReversed | groupBy: vm.misc.groupByCol" class="clickable dataRow" ng-class="{'isNotActive': !item.isActive, 'isActive': item.isActive}">
+            <tr ng-repeat="item in vm.data | filter:vm.misc.searchTxt | orderBy:vm.misc.orderVal:vm.misc.isReversed" class="clickable dataRow" ng-class="{'isNotActive': !item.isActive, 'isActive': item.isActive}">
                 <td>{{item.name.first}}</td>
                 <td>{{item.name.last}}</td>
                 <td>{{item.company}}</td>
