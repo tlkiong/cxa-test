@@ -9,11 +9,14 @@
     function dataViewController(dataViewService, commonService) {
         var vm = this;
         vm.sortBy = sortBy;
+        vm.resetTable = resetTable;
+        vm.groupBy = groupBy;
 
         /* ======================================== Var ==================================================== */
         vm.misc = {
             searchTxt: '',
             orderVal: '',
+            groupByCol: '',
             isReversed: false
         };
         vm.data = [];
@@ -23,6 +26,17 @@
         var cmnSvc = commonService;
 
         /* ======================================== Public Methods ========================================= */
+        function groupBy() {
+            
+        }
+
+        function resetTable() {
+            vm.misc.orderVal = '';
+            vm.misc.searchTxt = '';
+            vm.misc.groupByCol = '';
+            vm.misc.isReversed = false;
+        }
+
         function sortBy(type, isReverse) {
             if(cmnSvc.isObjPresent(type) && cmnSvc.isObjPresent(isReverse)) {
                 if (type === 'firstName') {
@@ -41,9 +55,6 @@
                     vm.misc.orderVal = 'mainphone';
                 }
                 vm.misc.isReversed = isReverse;
-            } else {
-                vm.misc.orderVal = '';
-                vm.misc.isReversed = false;
             }
         }
 
