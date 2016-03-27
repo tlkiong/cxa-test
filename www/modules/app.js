@@ -19,4 +19,4 @@
 		        // 		$state.go('statename');		<= Do remember to add $state as dependency on 'run' as shown above
 		    });
         });
-})()
+})();

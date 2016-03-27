@@ -13,6 +13,9 @@ var watch = require('gulp-watch');
 var mainBowerFiles = require('main-bower-files');
 var merge = require('merge-stream');
 var runSequence = require('run-sequence');
+var concat = require('gulp-concat')
+var uglify = require('gulp-uglify')
+var ngAnnotate = require('gulp-ng-annotate')
 
 // ============== Convert this to a gulp task to create a gulp task - input, doc's title ==============
 
@@ -56,6 +59,13 @@ gulp.task('dev', function() {
         'sass',
         'inject');
     // load live reload server
+});
+
+gulp.task('prod', function() {
+    runSequence('generateView',
+        'sass',
+        'prod',
+        'injectProd')
 });
 
 gulp.task('update', function() {
@@ -151,3 +161,25 @@ gulp.task('inject-css', function() {
         }))
         .pipe(gulp.dest('./www/'));
 });
+
+gulp.task('jsProd', function () {
+  gulp.src(['./www/modules/**/*.module.js', './www/modules/**/*.js'])
+    .pipe(concat('cxa_test.js'))
+    .pipe(ngAnnotate())
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/'))
+});
+
+// gulp.task('cssProd', function () {
+//   gulp.src(['./www/modules/**/*.css'])
+//     .pipe(concat('cxa_test.css'))
+//     .pipe(uglify())
+//     .pipe(gulp.dest('./dist/'))
+// });
+
+// gulp.task('dev', function() {
+//     runSequence('generateView',
+//         'sass',
+//         'inject');
+//     // load live reload server
+// });
