@@ -5,8 +5,9 @@
             <input type="text" ng-model="vm.misc.searchTxt" class="flexExpand"></input>
         </md-input-container>
         <md-button class="md-raised md-primary resetSortBtn" ng-click="vm.resetTable()">Reset Table</md-button>
+        <md-button class="md-raised md-warn loadDataBtn" ng-click="vm.loadData()" ng-hide="vm.misc.errorLoadingData">Reload Data</md-button>
     </section>
-    <section class="tableContainer">
+    <section class="tableContainer" ng-show="vm.data.length > 0">
         <table>
             <tr>
                 <th>
@@ -55,5 +56,9 @@
                 <td>{{item.mainphone}}</td>
             </tr>
         </table>
+    </section>
+    <section id="loadingContainer" ng-hide="vm.data.length > 0"></section>
+    <section class="errorLoadingDataContainer" ng-show="vm.misc.errorLoadingData">
+        <md-button class="md-raised md-warn loadDataBtn" ng-click="vm.loadData()">Reload Data</md-button>
     </section>
 </section>
