@@ -63,8 +63,6 @@
                     }
                 }
 
-                console.log('list: ', dataObj);
-
                 var fullscreen = ($mdMedia('sm') || $mdMedia('xs')) && ($mdMedia('xs') || $mdMedia('sm'));
                 mdD.show({
                         controller: dialog,
