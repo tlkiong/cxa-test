@@ -1,0 +1,141 @@
+<md-dialog class="dialogContainer flexDown" aria-label="User Data" ng-cloak>
+	<md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 class="titleLbl flexExpand">User Data</h2>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+	<md-dialog-content>
+        <div class="md-dialog-content" ng-class="{'isActive': items.isActive}">
+        	<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">picture</div>
+				<div class="valContainer flowAcross">
+					<img ng-src="{{items.picture}}" alt="Picture" class="val">
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">greeting</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.greeting}}</div>
+				</div>
+			</div>
+            <div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">name</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.name}}</div>
+					<div class="isInactive" ng-class="{'isActive': items.isActive}">{{items.isActive ? 'Is Active' : 'Is Not Active'}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">balance</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.balance}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">id</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items._id}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">unique id (guid)</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.guid}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">index</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.index}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">about</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.about}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">company</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.company}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">address</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.address}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">age</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.age}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">main phone number</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.mainphone}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">all phone numbers</div>
+				<div class="valContainer flowAcross">
+					<ul>
+						<li ng-repeat="item in items.contactnumber">{{::item}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">email address</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.email}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">eye color</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.eyeColor}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">registered at</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.registered}}</div>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">friends</div>
+				<div class="valContainer flowAcross">
+					<ul>
+						<li ng-repeat="item in items.friends">{{::item}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">tags</div>
+				<div class="valContainer flowAcross">
+					<ul>
+						<li ng-repeat="item in items.tags">{{::item}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="dataDetailsRow flexAcross">
+				<div class="keyLbl">latitue - longitude</div>
+				<div class="valContainer flowAcross">
+					<div class="val">{{::items.latitude}} - {{::items.longitude}}</div>
+				</div>
+			</div>
+        </div>
+    </md-dialog-content>
+	<md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()" style="margin-right:20px;">
+            OK
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

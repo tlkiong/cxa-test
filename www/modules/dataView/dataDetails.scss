@@ -1,0 +1,48 @@
+.dialogContainer {
+	.titleLbl {
+		justify-content: center;
+		display: flex;
+	}
+	.md-dialog-content {
+		background-color: #FFE5E5;
+		&.isActive {
+			background-color: #E5FFE5;
+		}
+		.dataDetailsRow {
+			border-top: 1px solid #CECECE;
+			border-bottom: 1px solid #CECECE;
+			border-right: 2px solid #CECECE;
+			border-left: 2px solid #CECECE;
+			.keyLbl {
+				width: 20%;
+				padding: 1em;
+				text-transform: uppercase;
+				font-weight: bold;
+				border-right: 2px solid #CECECE;
+				text-align: center;
+			}
+			.valContainer {
+				width: 80%;
+				padding: 1em;
+				ul {
+					margin: 0;
+				    padding: 0 0 0 1em;
+				}
+				.val {
+					margin: 0 1em 0 0;
+				    display: flex;
+				    justify-content: center;
+				    flex-direction: column;
+				}
+				.isInactive {
+					background-color: red;
+					padding: 0.5em 1em;
+					color: white;
+				}
+				.isActive {
+					background-color: green;
+				}
+			}
+		}
+	}
+}
