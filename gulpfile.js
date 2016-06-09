@@ -13,9 +13,11 @@ var watch = require('gulp-watch');
 var mainBowerFiles = require('main-bower-files');
 var merge = require('merge-stream');
 var runSequence = require('run-sequence');
-var concat = require('gulp-concat')
-var uglify = require('gulp-uglify')
-var ngAnnotate = require('gulp-ng-annotate')
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var ngAnnotate = require('gulp-ng-annotate');
+var cleanCSS = require('gulp-clean-css');
+var sourcemaps = require('gulp-sourcemaps');
 
 // ============== Convert this to a gulp task to create a gulp task - input, doc's title ==============
 
@@ -164,22 +166,52 @@ gulp.task('inject-css', function() {
 
 gulp.task('jsProd', function () {
   gulp.src(['./www/modules/**/*.module.js', './www/modules/**/*.js'])
-    .pipe(concat('cxa_test.js'))
+    .pipe(sourcemaps.init())
+    .pipe(concat('cxa_test.min.js'))
     .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(gulp.dest('./dist/'))
 });
 
-// gulp.task('cssProd', function () {
-//   gulp.src(['./www/modules/**/*.css'])
-//     .pipe(concat('cxa_test.css'))
+gulp.task('cssProd', function () {
+ gulp.src('./www/modules/**/*.css')
+    .pipe(cleanCSS())
+    .pipe(concat('cxa_text.min.css'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('htmlProd', function (){
+    gulp.src('./www/modules/**/*.html')
+        .pipe(gulp.dest('./dist/modules/'))
+});
+
+// gulp.task('injectProd', function () {
+//  gulp.src('./www/modules/**/*.css')
+//     .pipe(cleanCSS())
+//     .pipe(concat('cxa_text.min.css'))
 //     .pipe(uglify())
-//     .pipe(gulp.dest('./dist/'))
+//     .pipe(gulp.dest('./dist/modules/'));
 // });
 
+gulp.task('generateViewProd', function() {
+    // createIndexHtml stream
+    var createIndexHtml = gulp.src('./www/main-view/pre-index.html')
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./dist/'));
+    // End of createIndexHtml stream
+
+    // compileModuleSass stream
+    var compileModuleSass = gulp.src('./www/modules/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./www/modules'));
+    // End of compileModuleSass stream
+
+    return merge(compileModuleSass, createIndexHtml);
+});
+
 // gulp.task('dev', function() {
-//     runSequence('generateView',
-//         'sass',
-//         'inject');
+//     runSequence('generateViewProd',
+//         'injectProd');
 //     // load live reload server
 // });

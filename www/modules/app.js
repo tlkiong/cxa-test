@@ -10,6 +10,7 @@
         .config(function($stateProvider, $urlRouterProvider, $compileProvider) {
             $urlRouterProvider.otherwise('/data_view');
             $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|file|blob|cdvfile|content):|data:image\//);
+            $compileProvider.debugInfoEnabled(false);
         }).run(function(/* $state */$rootScope) {
         	$rootScope.$on('$stateChangeStart', function(evnt, toState, toParams, fromState, fromParams) {
 		        // If you want to stop the state change event, use:
